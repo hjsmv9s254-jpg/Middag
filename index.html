@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Middag</title>
+<meta name="description" content="Middagsforslag etter råvare og kjøkken, med oppskrifter i norske måleenheter som skaleres til antall personer.">
+<!-- App-ikon for mobil (hjemskjerm) -->
+<meta name="application-name" content="Middag">
+<meta name="apple-mobile-web-app-title" content="Middag">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="theme-color" content="#F2EEE6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#191816" media="(prefers-color-scheme: dark)">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAEiElEQVR42u1WXYiWVRCemXPO9/587rrrquvvYomIJVZmSVhUKFhoXXQZCAWFF10YBBEJBelFYF4UCrJRl0XdBFmwFvajiRmpQZBkuem2a5vpru63+70/58xMF58uurvxKeRF0Fy8P7zwPmeeZ+aZwZGhs3Azg+Amx38fwP7TB1UFABx/R/yXAWwUqQKIKCioqirolQcAaFyvDkQkun4AHOk7DYg2SckYco6sI2vRGCKDREAIgIg4nqsKc57rJOCJACri0urg0SMHt71s45icI2NNpULWuWrVpVUkY+PIxomNE5ukNklsktooits7ZixbbqydkJydzD0aU7/wF5eFqVS4LEOoj9MiHFSUjFFh9h4AjKsIMyIAmYd37J69dJnPsqu5moIiBOCiAFUkImsFEKBBggJA8FmlrU2YLTMiAqKKAigSRVGkqhPKYaoyRQxZHRDJ2pBlwkFVuSzRmAdefX3N1u1kna+PIRk0RkVUWJgBAJ2brMGUfaAhz8mYxpERUUVU9d7nX5p9x8pLZ3oXP/J4pdpSXBoOWSbMgAiq5JypRKCKTQFUgYtcmIUDkgl5Boj3vfhKy9wF3+/a2X/ogHBYt3PPiqc2t3YtilpaERAAjIuMcyrSLAMEAPD1sYYGQNh556qHXnsj6Zj15dYtc1bes/HdD3/+6IOBbw/e/uTTG7rfX/LYExJ8o2/IOmhapgCoIqEokEhFpnctskl6qufju597Yd7q+wePHjn/04/zVq/penDt6f09o2f7ez/7lKwVYXKOGho0FVlFQp4BIBHV+n/v++pzn2U2TlS4drZ/6OQJKctkxsxaf9/xt3f5+hggSggmiskYaC4yYqMn0RB7ryomjuO2dgkhHx4O9Tp7j4bIuaI24qrVxnkRyUQRGqtNrQIRNQRhJuuQSFUlMDkHKpVp01oXLMyGLtgoLi4OI4CUHltIRSR4l6ZICM0pQhTmcrSmwsY6FeE8M67is6x33yf9hw+mszrPHNh/4eSJ5Zue6bxrlXiPRIgYtUwHbGp2qkjEwYsvydhQFi6tuoVd1c455Nyt6zf6er198ZIN3e8NHPnmh3d21wb6QQWNUVU0dDmDJlWEKN5zUaiqhhC3ta/buQcALvX91rH0tsFj3x3vfmvl5i23rHu0Zf7C4VO/nPliX+2PARWxSYqAcD0asPccPABQpTJ2bvBY95sjfaeHfj3px0bJWJemh3dsW7R2/YpNz+YXh8f+HHRp6utjNk6mHErXACgAIHGea0NYAADo7dmLZEwcJ+0dAIrGUqXS27O3/9DXqooAygKqNo4bP2iWAYCqhKzO3jdKlqxVZs0zRAJQ9t4ladzeEfIMANBa4dDwbW06MhGRfTlt7vw1W7fXz5/jsvD1esizkNW5KMT7YrTGRc5FISGEPBbv2ZfKTMYmM2cpy2SWcMrFyyYpGRr3psZAbjizMguzhCC+ZO+lLEORq0jrgq7mGoyHHxu9puDwigvi5cY1zplKVCEEREQCAC6LG9gqptwPJvgVgCiPy6qIdGNrS5O4wgbCtff/d9Mbj78BqZmHBA1OaiUAAAAASUVORK5CYII=">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* Middag – japandi
+   Papir, sumi-blekk, eik, mose og ett hanko-rødt stempel. */
+:root{
+  --bg:#F2EEE6;        /* washi */
+  --surface:#F8F5EF;
+  --surface-2:#E9E3D8;
+  --ink:#1F1D1A;       /* sumi */
+  --ink-2:#6B645A;
+  --ink-3:#958C7F;
+  --line:#D9D1C4;
+  --oak:#8C6E48;
+  --oak-soft:#E6DCCB;
+  --moss:#5F6B55;
+  --moss-soft:#E1E3D6;
+  --beni:#A34A36;      /* hanko */
+  --on-ink:#F2EEE6;
+  --scrim:rgba(31,29,26,.38);
+  --serif:"Shippori Mincho","Noto Serif JP","Hiragino Mincho ProN",Georgia,serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#191816; --surface:#211F1C; --surface-2:#2B2824; --ink:#ECE6DB; --ink-2:#A69D8F; --ink-3:#7C7468;
+    --line:#37332E; --oak:#C4A47A; --oak-soft:#342C22; --moss:#A3B096; --moss-soft:#262A22;
+    --beni:#C9664F; --on-ink:#191816; --scrim:rgba(0,0,0,.55);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#191816; --surface:#211F1C; --surface-2:#2B2824; --ink:#ECE6DB; --ink-2:#A69D8F; --ink-3:#7C7468;
+  --line:#37332E; --oak:#C4A47A; --oak-soft:#342C22; --moss:#A3B096; --moss-soft:#262A22;
+  --beni:#C9664F; --on-ink:#191816; --scrim:rgba(0,0,0,.55);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:var(--sans); font-size:16px; line-height:1.6; font-weight:400;
+  -webkit-font-smoothing:antialiased; letter-spacing:.01em;
+  padding-bottom:env(safe-area-inset-bottom);
+}
+button{font:inherit;color:inherit}
+[hidden]{display:none!important}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+button:focus-visible,a:focus-visible,select:focus-visible,summary:focus-visible{outline:1.5px solid var(--oak);outline-offset:3px}
+
+/* ---------- Topp ---------- */
+header{padding:calc(40px + env(safe-area-inset-top)) 0 28px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
+.brand h1{margin:0;font-family:var(--serif);font-weight:500;font-size:46px;line-height:1;letter-spacing:.02em}
+.brand p{margin:12px 0 0;color:var(--ink-2);font-size:14px;letter-spacing:.06em}
+.hanko{
+  flex:none;width:44px;height:44px;display:grid;place-items:center;
+  background:var(--beni);color:var(--bg);border-radius:3px;
+  font-family:var(--serif);font-weight:700;font-size:26px;line-height:1;
+  transform:rotate(-3deg);margin-bottom:4px;
+}
+
+/* ---------- Valg ---------- */
+.panel{padding:28px 0 8px;display:grid;gap:26px}
+.label{margin:0 0 12px;font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{
+  border:1px solid var(--line);background:transparent;border-radius:2px;
+  padding:8px 16px;font-size:14px;letter-spacing:.04em;cursor:pointer;min-height:40px;
+  display:inline-flex;align-items:center;gap:8px;color:var(--ink-2);
+  transition:background .2s,border-color .2s,color .2s;
+}
+@media (hover:hover){.chip:hover{border-color:var(--ink-3);color:var(--ink)}}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--on-ink)}
+.chip.fav svg{width:14px;height:14px}
+.chip.fav[aria-pressed="true"]{background:var(--beni);border-color:var(--beni);color:var(--bg)}
+.row{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap}
+
+.stepper{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:2px}
+.step-btn{width:44px;height:40px;border:0;background:transparent;font-size:18px;font-weight:300;cursor:pointer;color:var(--ink)}
+.step-btn:disabled{opacity:.25;cursor:default}
+.step-val{min-width:104px;text-align:center;font-size:14px;letter-spacing:.04em;font-variant-numeric:tabular-nums;border-inline:1px solid var(--line);line-height:40px}
+
+select{
+  font:inherit;font-size:14px;letter-spacing:.04em;color:var(--ink);background-color:transparent;
+  border:1px solid var(--line);border-radius:2px;padding:8px 38px 8px 14px;min-height:42px;
+  appearance:none;-webkit-appearance:none;
+  background-image:linear-gradient(45deg,transparent 50%,var(--ink-2) 50%),linear-gradient(135deg,var(--ink-2) 50%,transparent 50%);
+  background-position:calc(100% - 19px) 52%,calc(100% - 14px) 52%;background-size:5px 5px;background-repeat:no-repeat;
+}
+
+/* ---------- Liste ---------- */
+.results-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:40px 0 8px;padding-bottom:16px;border-bottom:1px solid var(--ink)}
+.results-head h2{margin:0;font-family:var(--serif);font-weight:500;font-size:28px;line-height:1.1}
+.count{display:block;margin-top:6px;color:var(--ink-3);font-size:13px;letter-spacing:.08em;font-variant-numeric:tabular-nums}
+.list{display:grid;grid-template-columns:1fr;column-gap:40px}
+@media (min-width:700px){.list{grid-template-columns:1fr 1fr}}
+
+.card{position:relative;display:flex;align-items:stretch;min-width:0;border-bottom:1px solid var(--line)}
+.open-btn{
+  flex:1;min-width:0;display:flex;gap:18px;align-items:center;text-align:left;border:0;background:transparent;
+  padding:20px 0;cursor:pointer;
+}
+@media (hover:hover){.open-btn:hover h3{color:var(--oak)}}
+.thumb{
+  flex:none;width:84px;height:84px;display:grid;place-items:center;overflow:hidden;border-radius:2px;
+  background:var(--oak-soft);color:var(--oak);font-family:var(--serif);font-size:30px;font-weight:500;
+}
+.thumb img{width:100%;height:100%;object-fit:cover;filter:saturate(.82) contrast(.98)}
+.card h3{margin:0 0 8px;font-family:var(--serif);font-weight:500;font-size:19px;line-height:1.3;text-wrap:balance;transition:color .2s}
+.meta{display:flex;flex-wrap:wrap;align-items:center;gap:4px 0;font-size:12px;letter-spacing:.08em;color:var(--ink-2)}
+.tag{display:inline-flex;align-items:center}
+.tag+.tag::before{content:"";width:3px;height:3px;border-radius:50%;background:var(--ink-3);margin:0 10px}
+.tag.veg{color:var(--moss)}
+.tag.new{color:var(--beni)}
+.src{font-size:12px;color:var(--ink-3);margin-top:6px;letter-spacing:.04em}
+.card-actions{display:flex;flex-direction:column;justify-content:center;gap:2px;padding-left:6px}
+.icon-btn{
+  width:40px;height:40px;border:0;border-radius:2px;background:transparent;cursor:pointer;
+  display:grid;place-items:center;color:var(--ink-3);font-size:16px;line-height:1;transition:color .2s,background .2s;
+}
+@media (hover:hover){.icon-btn:hover{color:var(--ink);background:var(--surface-2)}}
+.icon-btn.heart[aria-pressed="true"]{color:var(--beni)}
+.icon-btn svg{width:20px;height:20px}
+
+.empty{grid-column:1/-1;padding:48px 12px;text-align:center;color:var(--ink-2);font-family:var(--serif);font-size:17px}
+
+/* ---------- Knapper ---------- */
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin:36px 0 12px}
+.btn{
+  flex:1 1 220px;border:1px solid var(--ink);border-radius:2px;padding:14px 20px;
+  font-size:14px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;min-height:52px;
+  transition:background .2s,color .2s,border-color .2s;
+}
+.btn.primary{background:var(--ink);color:var(--on-ink)}
+@media (hover:hover){.btn.primary:hover{background:transparent;color:var(--ink)}}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+@media (hover:hover){.btn.ghost:hover{border-color:var(--ink)}}
+.btn:disabled{opacity:.5;cursor:progress}
+.btn.small{flex:none;min-height:34px;padding:6px 14px;font-size:11px}
+.actions.quiet{margin-top:8px}
+
+.status{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;font-size:14px;color:var(--ink-2);display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.status.err{color:var(--beni)}
+.spinner{width:16px;height:16px;border-radius:50%;border:1.5px solid var(--line);border-top-color:var(--ink);animation:spin 1.2s linear infinite;flex:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+.mode{font-size:12px;color:var(--ink-3);margin:10px 0 0;letter-spacing:.03em;max-width:60ch}
+
+details.hidden-list{margin:32px 0 8px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+details.hidden-list summary{cursor:pointer;padding:14px 0;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
+details.hidden-list ul{list-style:none;margin:0 0 12px;padding:0}
+details.hidden-list li{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid var(--line);font-family:var(--serif)}
+
+footer{color:var(--ink-3);font-size:12px;letter-spacing:.04em;text-align:center;padding:40px 20px 48px;max-width:760px;margin:0 auto}
+footer .hanko{width:22px;height:22px;font-size:13px;display:inline-grid;vertical-align:middle;margin:0 0 0 6px;transform:rotate(-3deg)}
+
+.toast{
+  position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom));transform:translateX(-50%);
+  background:var(--ink);color:var(--on-ink);border-radius:2px;padding:10px 10px 10px 18px;z-index:20;
+  display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:14px;letter-spacing:.03em;
+  width:min(440px,calc(100% - 32px));
+}
+.toast button{border:0;background:transparent;color:var(--on-ink);font-size:12px;letter-spacing:.16em;text-transform:uppercase;padding:8px 10px;cursor:pointer;text-decoration:underline;text-underline-offset:4px}
+
+/* ---------- Oppskrift ---------- */
+.sheet-bg{position:fixed;inset:0;background:var(--scrim);opacity:0;pointer-events:none;transition:opacity .3s;z-index:10}
+.sheet{
+  position:fixed;left:0;right:0;bottom:0;max-height:94vh;max-height:94dvh;overflow:auto;z-index:11;
+  background:var(--bg);border-radius:4px 4px 0 0;transform:translateY(100%);transition:transform .35s cubic-bezier(.2,.7,.2,1);
+  padding:0 0 calc(32px + env(safe-area-inset-bottom));visibility:hidden;
+}
+.open .sheet-bg{opacity:1;pointer-events:auto}
+.open .sheet{transform:none;visibility:visible}
+@media (min-width:760px){.sheet{left:50%;width:720px;margin-left:-360px}}
+.sheet-top{position:sticky;top:0;background:var(--bg);padding:12px 24px 18px;border-bottom:1px solid var(--line);z-index:1}
+.grab{width:36px;height:3px;border-radius:2px;background:var(--line);margin:0 auto 16px}
+.sheet-title{display:flex;align-items:flex-start;gap:12px;justify-content:space-between}
+.sheet-title h2{margin:0;font-family:var(--serif);font-weight:500;font-size:28px;line-height:1.2;text-wrap:balance}
+.close{border:1px solid var(--line);background:transparent;width:40px;height:40px;border-radius:2px;font-size:15px;cursor:pointer;flex:none;color:var(--ink-2)}
+@media (hover:hover){.close:hover{border-color:var(--ink);color:var(--ink)}}
+.sheet-tools{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:16px}
+.pill-btn{border:1px solid var(--line);background:transparent;border-radius:2px;min-height:42px;padding:6px 16px;font-size:13px;letter-spacing:.06em;cursor:pointer;display:inline-flex;align-items:center;gap:8px;color:var(--ink-2)}
+@media (hover:hover){.pill-btn:hover{border-color:var(--ink);color:var(--ink)}}
+.pill-btn.heart[aria-pressed="true"]{border-color:var(--beni);color:var(--beni)}
+.pill-btn svg{width:16px;height:16px}
+.sheet-body{padding:24px}
+.sheet h3{font-family:var(--sans);font-size:11px;font-weight:500;text-transform:uppercase;letter-spacing:.22em;color:var(--ink-3);margin:32px 0 12px}
+#dImg:empty + h3{margin-top:0}
+.hero-img{width:100%;aspect-ratio:16/9;max-width:100%;object-fit:cover;border-radius:2px;display:block;background:var(--surface-2);filter:saturate(.85)}
+.ing{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.ing li{display:flex;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.qty{flex:none;width:92px;color:var(--oak);font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.steps{margin:0;padding:0;list-style:none;counter-reset:s}
+.steps li{position:relative;padding:0 0 18px 44px;counter-increment:s;font-size:15px;max-width:62ch}
+.steps li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:0;font-family:var(--serif);font-size:15px;color:var(--oak);letter-spacing:.04em}
+.note{border-left:2px solid var(--moss);padding:4px 0 4px 16px;margin-top:12px;font-size:14px;color:var(--ink-2)}
+.note b{display:block;font-weight:500;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--moss);margin-bottom:4px}
+.srcbox{margin-top:32px;padding-top:16px;border-top:1px solid var(--line);font-size:13px;color:var(--ink-3)}
+.srcbox a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--oak);text-underline-offset:4px}
+
+@media (max-width:420px){
+  .brand h1{font-size:40px}
+  .thumb{width:72px;height:72px}
+  .sheet-top,.sheet-body{padding-left:20px;padding-right:20px}
+}
+@media (prefers-reduced-motion: reduce){.sheet,.sheet-bg,.chip,.btn{transition:none}.spinner{animation-duration:3s}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div>
+        <h1>Middag</h1>
+        <p>Hva skal vi spise i dag?</p>
+      </div>
+      <span class="hanko" aria-hidden="true">食</span>
+    </div>
+  </header>
+
+  <section class="panel" aria-label="Valg">
+    <div class="group">
+      <p class="label">Råvare</p>
+      <div class="chips" id="proteinChips"></div>
+    </div>
+    <div class="group">
+      <p class="label">Kjøkken</p>
+      <div class="chips" id="cuisineChips"></div>
+    </div>
+    <div class="group row">
+      <div>
+        <p class="label">Antall personer</p>
+        <div class="stepper" role="group" aria-label="Antall personer">
+          <button class="step-btn" id="minus" aria-label="Færre personer">−</button>
+          <span class="step-val" id="persons" aria-live="polite">4 personer</span>
+          <button class="step-btn" id="plus" aria-label="Flere personer">+</button>
+        </div>
+      </div>
+      <div>
+        <p class="label"><label for="sort">Sorter</label></p>
+        <select id="sort">
+          <option value="match">Best treff</option>
+          <option value="time">Raskest først</option>
+          <option value="name">Navn A–Å</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <div class="results-head">
+    <div>
+      <h2>Forslag</h2>
+      <span class="count" id="count"></span>
+    </div>
+    <button class="chip fav" id="favOnly" aria-pressed="false"></button>
+  </div>
+  <div class="list" id="list"></div>
+
+  <div class="actions">
+    <button class="btn primary" id="addNew">Legg til nye oppskrifter</button>
+    <button class="btn ghost" id="surprise">Overrask meg</button>
+  </div>
+  <div id="status" class="status" hidden role="status"></div>
+  <p class="mode" id="modeNote"></p>
+
+  <details class="hidden-list" id="hiddenBox" hidden>
+    <summary id="hiddenSummary">Fjernede oppskrifter</summary>
+    <ul id="hiddenList"></ul>
+  </details>
+
+  <div class="actions quiet">
+    <a class="btn ghost" id="searchMore" target="_blank" rel="noopener">Søk etter flere på nettet</a>
+  </div>
+</div>
+<footer>Lagre favoritter med hjertet, og fjern retter du ikke liker med krysset. Valgene lagres på denne enheten.<span class="hanko" aria-hidden="true">食</span></footer>
+
+<div id="toast" class="toast" hidden role="status"><span id="toastText"></span><button id="toastUndo">Angre</button></div>
+
+<div id="sheetRoot">
+  <div class="sheet-bg" id="sheetBg"></div>
+  <div class="sheet" role="dialog" aria-modal="true" aria-labelledby="dTitle">
+    <div class="sheet-top">
+      <div class="grab"></div>
+      <div class="sheet-title">
+        <h2 id="dTitle"></h2>
+        <button class="close" id="close" aria-label="Lukk">✕</button>
+      </div>
+      <div class="meta" id="dMeta" style="margin-top:6px"></div>
+      <div class="sheet-tools">
+        <div class="stepper" role="group" aria-label="Antall personer">
+          <button class="step-btn" id="dMinus" aria-label="Færre personer">−</button>
+          <span class="step-val" id="dPersons"></span>
+          <button class="step-btn" id="dPlus" aria-label="Flere personer">+</button>
+        </div>
+        <button class="pill-btn heart" id="dFav" aria-pressed="false"></button>
+        <button class="pill-btn" id="dHide">Liker ikke</button>
+      </div>
+    </div>
+    <div class="sheet-body">
+      <div id="dImg"></div>
+      <h3>Ingredienser</h3>
+      <ul class="ing" id="dIng"></ul>
+      <h3>Slik gjør du</h3>
+      <ol class="steps" id="dSteps"></ol>
+      <div id="dNote"></div>
+      <div class="srcbox" id="dSrc"></div>
+    </div>
+  </div>
+</div>
+<script>
+const RECIPES = [
+ // ===== ASIATISK =====
+ {id:"green-curry",img:"https://images.matprat.no/uxn8vdx3vk-normal/710/og.png",t:"Green curry med kylling",p:"kylling",c:"asiatisk",min:30,e:"🍛",
+  src:"https://www.matprat.no/oppskrifter/kos/green-curry-med-kylling/",sn:"Matprat",
+  ing:[[600,"g","kyllingfilet"],[2,"ss","grønn karripasta"],[4,"dl","kokosmelk"],[1,"dl","vann"],[1,"stk","rød paprika"],[150,"g","sukkererter"],[1,"ss","fiskesaus"],[1,"ts","sukker"],[1,"stk","lime"],[0.5,"bunt","thaibasilikum"],[3,"dl","jasminris"]],
+  st:["Kok risen etter anvisning på pakken.","Fres karripastaen i litt olje i en gryte i ca. 1 minutt.","Hell i kokosmelk og vann og la det småkoke.","Skjær kyllingen i biter, legg den i sausen og la det trekke i 8–10 minutter.","Tilsett paprika i strimler og sukkererter de siste 3 minuttene.","Smak til med fiskesaus, sukker og limesaft. Topp med thaibasilikum og server med ris."]},
+ {id:"kyllingcurry-sotpotet",img:"https://images.matprat.no/eg8nhxkbbu-normal/710/og.png",t:"Kyllingcurry med søtpotet",p:"kylling",c:"asiatisk",min:40,e:"🍠",
+  src:"https://www.matprat.no/oppskrifter/familien/kyllingcurry-med-sotpotet/",sn:"Matprat",
+  ing:[[500,"g","kyllingfilet"],[400,"g","søtpotet"],[1,"stk","løk"],[2,"fedd","hvitløk"],[1,"ss","revet ingefær"],[1,"ss","karri"],[4,"dl","kokosmelk"],[400,"g","hakkede tomater (1 boks)"],[100,"g","babyspinat"],[1,"ts","salt"],[3,"dl","ris"]],
+  st:["Kok risen.","Fres hakket løk, hvitløk og ingefær mykt i litt olje. Tilsett karri og fres i 1 minutt.","Tilsett kylling i biter og brun lett.","Ha i søtpotet i terninger, kokosmelk og tomater. Småkok i ca. 20 minutter til søtpoteten er mør.","Vend inn spinaten til slutt og smak til med salt."]},
+ {id:"laks-teriyaki",img:"https://images.matprat.no/jjbjl5qhmq-normal/710/og.png",t:"Laks teriyaki",p:"fisk",c:"asiatisk",min:25,e:"🍣",
+  src:"https://www.matprat.no/oppskrifter/familien/laks-teriyaki/",sn:"Matprat",
+  ing:[[600,"g","laksefilet"],[1,"dl","soyasaus"],[0.5,"dl","mirin"],[2,"ss","sukker"],[1,"ss","revet ingefær"],[1,"fedd","hvitløk"],[300,"g","brokkoli"],[2,"stk","vårløk"],[1,"ss","sesamfrø"],[3,"dl","ris"]],
+  st:["Kok risen.","Kok opp soyasaus, mirin, sukker, ingefær og hvitløk og la sausen koke inn i noen minutter til den tykner.","Stek laksen på skinnsiden i en varm panne i 4–5 minutter, snu og stek 2–3 minutter til.","Hell teriyakisausen over laksen og la den glasere.","Damp eller kok brokkolien. Server med ris, strø over vårløk og sesamfrø."]},
+ {id:"thai-fiskekaker",img:"https://www.godfisk.no/contentassets/fb2bede14e19404587e439074149094b/full_file_1347977371.jpg?width=1200&height=630&transform=DownFill&hash=5b8b914042b7e5ea20cc3ba62bf1eaf2",t:"Thailandske fiskekaker",p:"fisk",c:"asiatisk",min:35,e:"🐟",
+  src:"https://www.godfisk.no/oppskrifter/torsk/thailandske-fiskekaker/",sn:"Godfisk",
+  ing:[[600,"g","torskefilet"],[1,"ss","rød karripasta"],[1,"stk","egg"],[1,"ss","fiskesaus"],[1,"stk","lime (skall og saft)"],[50,"g","aspargesbønner"],[0.5,"bunt","koriander"],[2,"ss","olje til steking"],[1,"dl","søt chilisaus"],[1,"stk","agurk"],[200,"g","risnudler"]],
+  st:["Kjør fisken med karripasta, egg, fiskesaus og limeskall til en grov farse i foodprosessor.","Vend inn finskårne aspargesbønner og hakket koriander.","Form små, flate kaker og stek dem gyldne i olje, ca. 2–3 minutter per side.","Kok risnudlene og lag en rask salat av agurk og limesaft.","Server med søt chilisaus."]},
+ {id:"tofu-wok",img:"https://cdn.sanity.io/images/2vehtkn0/production/cdb7a70e1c613e69c12285604bc508a889e719b7-2000x1500.jpg?w=800",t:"Wok med tofu og cashewnøtter",p:"vegetar",c:"asiatisk",min:25,e:"🥦",
+  src:"https://meny.no/oppskrifter/wok/wok-med-tofu",sn:"MENY",
+  ing:[[400,"g","fast tofu"],[2,"ss","maisstivelse"],[1,"stk","rød paprika"],[200,"g","brokkoli"],[150,"g","sukkererter"],[2,"fedd","hvitløk"],[1,"ss","revet ingefær"],[0.5,"dl","soyasaus"],[2,"ss","vegetarisk woksaus"],[1,"ss","sesamolje"],[50,"g","cashewnøtter"],[3,"dl","ris"]],
+  st:["Kok risen.","Press væske ut av tofuen, skjær i terninger og vend i maisstivelse. Stek sprø i olje og legg til side.","Wok grønnsakene raskt på høy varme med hvitløk og ingefær.","Tilsett soyasaus, woksaus og sesamolje, og vend inn tofuen.","Strø over ristede cashewnøtter og server med ris."]},
+ {id:"chow-mein",img:"https://www.kikkoman.no/fileadmin/_processed_/9/2/csm_1213_Recipe-Page_Cantonese_Tofu_Stir-FryNoodles_SoySauce_Desktop_96d96c0df7.jpg",t:"Vegetarisk chow mein med tofu",p:"vegetar",c:"asiatisk",min:25,e:"🍜",
+  src:"https://www.kikkoman.no/oppskrifter/detail/tofu-wok-med-nudler-vegetarisk-chow-mein",sn:"Kikkoman",
+  ing:[[250,"g","eggnudler"],[300,"g","fast tofu"],[1,"stk","løk"],[2,"stk","gulrot"],[200,"g","hvitkål"],[100,"g","bønnespirer"],[2,"fedd","hvitløk"],[0.5,"dl","soyasaus"],[1,"ss","sesamolje"],[3,"stk","vårløk"]],
+  st:["Kok nudlene, skyll i kaldt vann og la dem renne av.","Stek tofu i terninger gyllen i litt olje og legg til side.","Wok løk, gulrot i strimler og kål i 3–4 minutter. Tilsett hvitløk.","Vend inn nudler, bønnespirer, tofu, soyasaus og sesamolje og wok videre til alt er varmt.","Topp med vårløk."]},
+
+ // ===== ITALIENSK =====
+ {id:"cacciatore",img:"https://images.matprat.no/dn4kqfev6f-normal/710/og.png",t:"Kylling cacciatore",p:"kylling",c:"italiensk",min:60,e:"🍗",
+  src:"https://www.matprat.no/oppskrifter/kos/kylling-cacciatore/",sn:"Matprat",
+  ing:[[1000,"g","kyllinglår med bein"],[1,"stk","løk"],[2,"fedd","hvitløk"],[1,"stk","rød paprika"],[150,"g","sjampinjong"],[1,"ss","tomatpuré"],[1,"dl","rødvin eller kraft"],[400,"g","hakkede tomater (1 boks)"],[2,"dl","kyllingkraft"],[2,"ts","tørket timian"],[50,"g","sorte oliven"],[800,"g","poteter"]],
+  st:["Krydre kyllinglårene med salt og pepper og brun dem godt i en stekegryte. Ta dem ut.","Fres løk, hvitløk, paprika og sopp i samme gryte. Rør inn tomatpuré.","Spe med rødvin og la det koke inn litt. Tilsett tomater, kraft og timian.","Legg kyllingen tilbake og la gryten småkoke under lokk i ca. 35 minutter.","Tilsett oliven de siste minuttene. Server med kokte poteter eller brød."]},
+ {id:"saltimbocca",img:"https://mummum.dk/wp-content/uploads/2022/03/4Y7A1289-min-860x835.jpg",t:"Kylling saltimbocca",p:"kylling",c:"italiensk",min:30,e:"🌿",
+  src:"https://mummum.dk/kylling-saltimbocca/",sn:"Mummum (dansk)",
+  ing:[[600,"g","kyllingfilet (4 stk)"],[8,"skiver","spekeskinke"],[8,"stk","salvieblader"],[1,"ss","smør"],[1,"dl","hvitvin"],[1,"dl","kyllingkraft"],[1,"ss","sitronsaft"],[800,"g","småpoteter"],[250,"g","brokkolini eller asparges"]],
+  st:["Kok potetene.","Del kyllingfiletene på langs til tynne skiver og bank dem litt flate.","Legg et salvieblad på hver og surr inn i spekeskinke.","Stek i smør 3–4 minutter per side til kyllingen er gjennomstekt. Ta ut.","Kok ut stekepannen med hvitvin og kraft, smak til med sitron og hell over kyllingen.","Server med poteter og dampet brokkolini."]},
+ {id:"livornese",img:"https://lofotfisk.com/wp-content/uploads/2025/04/Torsk-ala-Livornese.jpg",t:"Torsk alla livornese",p:"fisk",c:"italiensk",min:30,e:"🍅",
+  src:"https://lofotfisk.com/oppskrifter/torsk-alla-livornese-italiensk-torsk-med-tomat-oliven-og-kapers/",sn:"Lofotfisk",
+  ing:[[600,"g","torskefilet"],[2,"ss","olivenolje"],[2,"fedd","hvitløk"],[0.5,"dl","hvitvin"],[400,"g","hakkede tomater (1 boks)"],[50,"g","sorte oliven"],[2,"ss","kapers"],[0.5,"bunt","persille"],[800,"g","poteter"]],
+  st:["Kok potetene.","Fres hvitløk i olivenolje, spe med hvitvin og tilsett tomatene. La sausen småkoke i 10 minutter.","Rør inn oliven og kapers.","Legg torskestykkene i sausen, legg på lokk og la fisken trekke i 6–8 minutter.","Strø over hakket persille og server med poteter."]},
+ {id:"torsk-i-form",img:"https://images.matprat.no/d6nqay4uv3-normal/710/og.png",t:"Torsk i form med tomat og oliven",p:"fisk",c:"italiensk",min:35,e:"🫒",
+  src:"https://www.matprat.no/oppskrifter/familien/torsk-i-form-med-tomat-og-oliven/",sn:"Matprat",
+  ing:[[600,"g","torskefilet"],[250,"g","cherrytomater"],[1,"stk","squash"],[50,"g","grønne oliven"],[2,"ss","pesto"],[2,"ss","olivenolje"],[30,"g","parmesan"],[300,"g","pasta (f.eks. orzo)"]],
+  st:["Forvarm ovnen til 200 °C.","Legg squash i skiver, tomater og oliven i en ildfast form og drypp over olivenolje.","Legg torsken oppå, smør med pesto og strø over revet parmesan.","Stek i ca. 20 minutter til fisken er akkurat gjennom.","Server med kokt pasta."]},
+ {id:"risotto-sopp",img:"https://www.tine.no/_/recipeimage/w_1200,h_675,c_fill,x_1500,y_1000,g_xy_center/recipeimage/346474.jpg",t:"Risotto med sopp",p:"vegetar",c:"italiensk",min:40,e:"🍄",
+  src:"https://www.tine.no/oppskrifter/middag-og-hovedretter/pasta-og-ris/risotto-med-sopp",sn:"TINE",
+  ing:[[3,"dl","risottoris (arborio)"],[250,"g","sjampinjong"],[1,"stk","løk"],[1,"fedd","hvitløk"],[1,"dl","hvitvin"],[10,"dl","grønnsakskraft"],[30,"g","smør"],[50,"g","parmesan"],[0.5,"bunt","persille"]],
+  st:["Stek soppen gyllen i litt smør. Legg til side.","Fres løk og hvitløk blankt, tilsett risen og fres til den blir blank.","Spe med hvitvin og la det koke inn.","Tilsett varm kraft litt og litt under omrøring i 18–20 minutter til risen er kremet, men har litt bitt.","Vend inn sopp, smør og revet parmesan. Topp med persille."]},
+ {id:"alla-norma",img:"https://bcdn.cakeiteasy.com/foodspace/1760012464134-blob?width=1080&height=600&optimizer=image&format=webp",t:"Pasta alla Norma",p:"vegetar",c:"italiensk",min:40,e:"🍆",
+  src:"https://www.maschmanns.no/blog/pasta-alla-norma",sn:"Maschmanns",
+  ing:[[2,"stk","aubergine"],[1,"dl","olivenolje"],[2,"fedd","hvitløk"],[800,"g","hakkede tomater (2 bokser)"],[1,"ts","chiliflak"],[400,"g","pasta (rigatoni)"],[100,"g","ricotta eller feta"],[0.5,"bunt","basilikum"]],
+  st:["Skjær auberginen i terninger og stek i olivenolje til de er gylne og myke.","Fres hvitløk og chili, tilsett tomatene og la sausen småkoke i 15 minutter.","Kok pastaen.","Vend auberginen inn i sausen og bland med pastaen.","Server med smuldret ricotta og frisk basilikum."]},
+
+ // ===== GRESK =====
+ {id:"souvlaki",img:"https://trinesmatblogg.no/wp-content/uploads/2025/05/CC5A8248.jpg",t:"Kyllingsouvlaki med tzatziki",p:"kylling",c:"gresk",min:40,e:"🍢",
+  src:"https://trinesmatblogg.no/recipe/kylling-souvlaki-med-tzatziki-og-gresk-salat/",sn:"Trines Matblogg",
+  ing:[[600,"g","kyllingfilet"],[3,"ss","olivenolje"],[1,"stk","sitron"],[2,"ts","tørket oregano"],[2,"fedd","hvitløk"],[4,"dl","gresk yoghurt"],[0.5,"stk","agurk"],[4,"stk","pitabrød"],[1,"stk","rødløk"],[250,"g","cherrytomater"],[100,"g","fetaost"]],
+  st:["Skjær kyllingen i terninger og mariner i olivenolje, sitronsaft, oregano og 1 fedd hvitløk i minst 30 minutter.","Tre kyllingen på spyd og grill eller stek i 10–12 minutter.","Lag tzatziki: riv agurken, klem ut væsken og rør inn i yoghurten med resten av hvitløken.","Lag salat av tomater, rødløk og feta.","Server med varme pitabrød."],note:"Marinér gjerne kyllingen om morgenen – den blir bare bedre."},
+ {id:"sitronkylling",img:"https://hftgfeedtiijaxytnruf.supabase.co/storage/v1/object/public/recipe/pexels/130837.jpg",t:"Gresk sitronkylling med poteter",p:"kylling",c:"gresk",min:60,e:"🍋",
+  src:"https://norgesmatfat.no/stekte-kyllinglar-med-sitron-og-oregano",sn:"Norges Matfat",
+  ing:[[1000,"g","kyllinglår med bein"],[1000,"g","poteter"],[2,"stk","sitron"],[0.75,"dl","olivenolje"],[3,"fedd","hvitløk"],[1,"ss","tørket oregano"],[2,"dl","kyllingkraft"],[1,"ts","salt"]],
+  st:["Forvarm ovnen til 220 °C.","Skjær potetene i båter og legg dem i en langpanne sammen med kyllinglårene.","Rør sammen olivenolje, sitronsaft, revet sitronskall, hvitløk, oregano og salt. Hell over og bland godt.","Hell kraften i bunnen av formen.","Stek i ca. 45 minutter til kyllingen er gyllen og potetene møre. Vend potetene underveis."]},
+ {id:"torsk-greske",img:"https://www.godfisk.no/globalassets/3iuka/godfisk/torsk/gresk-torsk-form.jpg?width=1200&height=630&transform=DownFill&hash=5b8b914042b7e5ea20cc3ba62bf1eaf2",t:"Torsk med greske smaker",p:"fisk",c:"gresk",min:30,e:"🐠",
+  src:"https://www.godfisk.no/oppskrifter/torsk/torsk-med-greske-smaker/",sn:"Godfisk",
+  ing:[[600,"g","torskefilet"],[250,"g","cherrytomater"],[1,"stk","rødløk"],[50,"g","kalamataoliven"],[100,"g","fetaost"],[1,"ts","tørket oregano"],[2,"ss","olivenolje"],[1,"stk","sitron"],[800,"g","poteter"]],
+  st:["Forvarm ovnen til 200 °C og kok potetene.","Legg torsken i en ildfast form. Fordel tomater, rødløk i båter og oliven rundt.","Smuldre feta over, dryss oregano og drypp med olivenolje.","Stek i 15–20 minutter.","Server med sitronbåter og poteter."]},
+ {id:"laks-feta",img:"https://cdn-rdb.arla.com/dagrofa-dk/ovnbagt-laks-gront-og-fetaost-i-fad/2611354243.jpg?w=960&h=439&anchor=middlecenter&mode=crop&scale=both&ak=8567bf50&hm=73811dac",t:"Laks med feta og gresk salat",p:"fisk",c:"gresk",min:25,e:"🥗",
+  src:"https://meny.dk/opskrift/ovnbagt-laks-gront-og-fetaost-i-fad",sn:"MENY Danmark (dansk)",
+  ing:[[600,"g","laksefilet"],[100,"g","fetaost"],[1,"ts","tørket oregano"],[1,"stk","agurk"],[250,"g","cherrytomater"],[0.5,"stk","rødløk"],[50,"g","oliven"],[3,"ss","olivenolje"],[1,"ss","rødvinseddik"],[800,"g","småpoteter"]],
+  st:["Forvarm ovnen til 200 °C og kok potetene.","Legg laksen i en form, smuldre feta over og dryss oregano.","Stek i 12–15 minutter.","Lag salat av agurk, tomater, rødløk og oliven. Vend med olivenolje og eddik.","Server laksen med salat og poteter."]},
+ {id:"spanakopita",img:"https://marihult.no/wp-content/uploads/2015/01/Spinatpai.jpg",t:"Spanakopita – spinatpai med feta",p:"vegetar",c:"gresk",min:60,e:"🥧",
+  src:"https://marihult.no/2014/11/20/spanakopita-gresk-spinatpai/",sn:"Mari Hult",
+  ing:[[600,"g","frossen spinat"],[200,"g","fetaost"],[250,"g","ricotta"],[3,"stk","egg"],[1,"bunt","vårløk"],[0.5,"bunt","dill"],[8,"ark","filodeig"],[0.5,"dl","olivenolje"],[1,"ss","sesamfrø"]],
+  st:["Forvarm ovnen til 200 °C. Tin spinaten og press ut all væsken.","Bland spinat, smuldret feta, ricotta, egg, hakket vårløk og dill. Smak til med pepper.","Legg filoark i en smurt form, pensle hvert lag med olivenolje.","Fyll i spinatblandingen og brett kantene over. Topp med sammenkrøllede filoark.","Pensle med olje, dryss over sesamfrø og stek i 35–40 minutter."]},
+ {id:"gemista",img:"https://static1.squarespace.com/static/61e835d0a5232b39768fe4f7/t/69ce8a00701d8845a54ebf2c/1775143424221/IMG_9279.JPG?format=1500w",t:"Gemista – fylte grønnsaker",p:"vegetar",c:"gresk",min:75,e:"🫑",
+  src:"https://www.noemadining.com/daglig-deilig-gresk/gemista",sn:"Noema Dining",
+  ing:[[4,"stk","paprika"],[4,"stk","store tomater"],[2,"dl","langkornet ris"],[1,"stk","løk"],[2,"fedd","hvitløk"],[1,"stk","squash"],[1,"dl","olivenolje"],[0.5,"bunt","persille"],[0.5,"bunt","mynte"],[600,"g","poteter"]],
+  st:["Forvarm ovnen til 190 °C. Skjær lokk av paprika og tomater og hul dem ut. Ta vare på tomatkjøttet.","Fres løk, hvitløk og revet squash i halvparten av oljen. Tilsett risen, hakket tomatkjøtt og urter. Smak til med salt og pepper.","Fyll grønnsakene tre fjerdedeler fulle (risen sveller) og sett på lokkene.","Sett dem i en form med potetbåter rundt, drypp over resten av oljen og litt vann.","Stek i ca. 60 minutter til risen er mør."]},
+
+ // ===== LIBANESISK =====
+ {id:"shish-tawook",img:"https://zaatarandzaytoun.com/wp-content/uploads/2019/02/shish.jpeg",t:"Shish tawook – kyllingspyd",p:"kylling",c:"libanesisk",min:40,e:"🍢",
+  src:"https://zaatarandzaytoun.com/chicken-shish-tawouk-classic-lebanese-recipe/",sn:"Zaatar and Zaytoun (engelsk)",
+  ing:[[700,"g","kyllingfilet"],[1,"dl","yoghurt naturell"],[2,"ss","tomatpuré"],[1,"stk","sitron"],[4,"fedd","hvitløk"],[1,"ts","paprikapulver"],[0.5,"ts","malt kardemomme"],[3,"ss","olivenolje"],[4,"stk","pitabrød"],[0.5,"stk","isbergsalat"],[2,"stk","tomat"]],
+  st:["Skjær kyllingen i terninger.","Rør sammen yoghurt, tomatpuré, sitronsaft, hvitløk, krydder og olivenolje. Mariner kyllingen i minst 1 time.","Tre på spyd og grill eller stek i 10–12 minutter til kyllingen er gjennomstekt og litt svidd i kantene.","Server i pitabrød med salat, tomat og gjerne hvitløkssaus."],note:"Marineringen gjør mye – gjerne over natten."},
+ {id:"shawarma",img:"https://www.etkjokken.com/wp-content/uploads/2016/09/Kylling-shawarma-2-of-5.jpg",t:"Kyllingshawarma med tahiniyoghurt",p:"kylling",c:"libanesisk",min:35,e:"🌯",
+  src:"https://www.etkjokken.com/2016/09/kylling-shawarma-med-tahiniyoghurt/",sn:"Et kjøkken (Vidar Bergum)",
+  ing:[[700,"g","kyllinglårfilet"],[1,"ss","malt spisskummen"],[1,"ss","paprikapulver"],[1,"ts","kanel"],[1,"ts","gurkemeie"],[3,"ss","olivenolje"],[1,"stk","sitron"],[2,"dl","gresk yoghurt"],[2,"ss","tahini"],[1,"fedd","hvitløk"],[4,"stk","pitabrød"],[2,"stk","tomat"],[0.5,"stk","agurk"],[1,"stk","rødløk"]],
+  st:["Bland krydder, olivenolje og saften av en halv sitron. Vend kyllingen i og la den stå i minst 20 minutter.","Stek kyllingen på høy varme i panne eller under ovnsgrill til den får stekeskorpe. Skjær i strimler.","Rør sammen yoghurt, tahini, hvitløk og resten av sitronsaften.","Server i varme pitabrød med tomat, agurk, rødløk og tahiniyoghurt."]},
+ {id:"samke-harra",img:"https://www.unicornsinthekitchen.com/wp-content/uploads/2026/03/samke-harra-sq.jpg",t:"Samke harra – krydret fisk med tahini",p:"fisk",c:"libanesisk",min:40,e:"🐟",
+  src:"https://www.unicornsinthekitchen.com/samke-harra/",sn:"Unicorns in the Kitchen (engelsk)",
+  ing:[[700,"g","hvit fisk (torsk eller lysing)"],[1,"dl","tahini"],[1,"stk","sitron"],[1,"dl","vann"],[3,"fedd","hvitløk"],[1,"stk","rød chili"],[1,"bunt","koriander"],[3,"ss","olivenolje"],[30,"g","pinjekjerner"],[3,"dl","bulgur eller ris"]],
+  st:["Forvarm ovnen til 200 °C. Kok bulgur eller ris.","Legg fisken i en form, krydre med salt og drypp med litt olivenolje. Stek i 10 minutter.","Fres hvitløk, chili og det meste av korianderen i resten av oljen.","Rør tahini, sitronsaft og vann til en jevn saus, og bland inn hvitløksblandingen.","Hell sausen over fisken og stek 8–10 minutter til. Topp med ristede pinjekjerner og koriander."]},
+ {id:"sayadieh",img:"https://zaatarandzaytoun.com/wp-content/uploads/2022/05/sayadieh.jpg",t:"Sayadieh – fisk og krydret ris",p:"fisk",c:"libanesisk",min:60,e:"🍚",
+  src:"https://zaatarandzaytoun.com/sayadieh/",sn:"Zaatar and Zaytoun (engelsk)",
+  ing:[[600,"g","hvit fisk (torsk eller sei)"],[3,"stk","løk"],[0.75,"dl","olje"],[3,"dl","basmatiris"],[1,"ts","malt spisskummen"],[1,"ts","allehånde"],[0.5,"ts","kanel"],[7,"dl","fiskekraft"],[30,"g","pinjekjerner eller mandler"],[1,"stk","sitron"]],
+  st:["Skjær løken i tynne skiver og stek den langsomt i oljen til den er mørk brun og karamellisert (ca. 20 minutter). Ta ut halvparten til pynt.","Tilsett krydder og skyllet ris i gryten med resten av løken og fres i 1 minutt.","Hell på kraften, kok opp og la risen trekke under lokk i ca. 15 minutter.","Stek fisken i en panne, krydret med spisskummen og salt.","Server fisken på risen, toppet med stekt løk, ristede nøtter og sitron."]},
+ {id:"falafel",img:"https://images.matprat.no/yfrlcndqrt-normal/710/og.png",t:"Falafel i pita med tahinisaus",p:"vegetar",c:"libanesisk",min:45,e:"🧆",
+  src:"https://www.matprat.no/oppskrifter/familien/falafel/",sn:"Matprat",
+  ing:[[250,"g","tørkede kikerter"],[1,"stk","løk"],[3,"fedd","hvitløk"],[1,"bunt","persille"],[0.5,"bunt","koriander"],[2,"ts","malt spisskummen"],[1,"ts","malt koriander"],[1,"ts","salt"],[1,"ts","bakepulver"],[5,"dl","olje til steking"],[0.5,"dl","tahini"],[1,"stk","sitron"],[4,"stk","pitabrød"],[2,"stk","tomat"]],
+  st:["Bløtlegg kikertene i rikelig kaldt vann natten før. Hermetiske kikerter gir for bløt farse.","Kjør kikerter, løk, hvitløk, urter, krydder og salt til en grov farse. Rør inn bakepulveret.","Form små boller og frityrstek i 170 °C olje i 3–4 minutter til de er mørke gylne.","Rør tahini med sitronsaft, litt vann og salt til en saus.","Server i pita med tomat, salat og tahinisaus."],note:"Husk: kikertene må bløtlegges kvelden før."},
+ {id:"mujadara",img:"https://www.aperitif.no/storage/image/core_files/2024/3/2/f30ff2dce7ccda37e323bffc73b17a2c/jpg/aperitif/article_details_medium/iStock-529139494.jpg",t:"Mujadara – linser, ris og stekt løk",p:"vegetar",c:"libanesisk",min:50,e:"🧅",
+  src:"https://www.aperitif.no/oppskrifter/oppskrift/mujadara,2360234",sn:"Aperitif",
+  ing:[[2,"dl","grønne linser"],[2,"dl","basmatiris"],[4,"stk","løk"],[1,"dl","olivenolje"],[2,"ts","malt spisskummen"],[1,"ts","salt"],[3,"dl","gresk yoghurt"],[1,"stk","agurk"]],
+  st:["Kok linsene i ca. 15 minutter, til de er nesten møre. Hell av vannet.","Stek løken i tynne skiver i olivenoljen på middels varme til den er mørk og sprø. Ta ut halvparten.","Tilsett spisskummen og risen i gryten og fres litt.","Tilsett linsene, salt og vann som dekker godt (ca. 5 dl). La det trekke under lokk i 15–18 minutter.","Server toppet med sprøstekt løk, med yoghurt og agurksalat ved siden av."]},
+ // ===== KJØTT =====
+ {id:"bulgogi",img:"https://images.matprat.no/3ax44g2aqd-normal/710/og.png",t:"Koreansk beef bulgogi",p:"kjøtt",c:"asiatisk",min:30,e:"🥩",
+  src:"https://www.matprat.no/oppskrifter/kos/koreansk-beef-bulgogi/",sn:"Matprat",
+  ing:[[600,"g","entrecôte eller ytrefilet av storfe"],[0.75,"dl","soyasaus"],[2,"ss","brunt sukker"],[1,"ss","sesamolje"],[3,"fedd","hvitløk"],[1,"ss","revet ingefær"],[1,"stk","pære"],[4,"stk","vårløk"],[1,"ss","sesamfrø"],[3,"dl","ris"],[0.5,"stk","agurk"],[200,"g","kimchi"]],
+  st:["Skjær kjøttet i tynne skiver på tvers av fibrene.","Rør sammen soyasaus, sukker, sesamolje, presset hvitløk, ingefær og revet pære. Mariner kjøttet i minst 30 minutter.","Kok risen.","Stek kjøttet på høy varme i små omganger, 1–2 minutter per omgang.","Topp med vårløk og sesamfrø. Server med ris, agurk og kimchi."],note:"Legg kjøttet 30 minutter i fryseren, så blir det lett å skjære tynt."},
+ {id:"sweet-sour",img:"https://images.matprat.no/xmcf3hb8bj-normal/710/og.png",t:"Svinekjøtt sweet and sour",p:"kjøtt",c:"asiatisk",min:30,e:"🍍",
+  src:"https://www.matprat.no/oppskrifter/rask/svinekjott-sweet-and-sour/",sn:"Matprat",
+  ing:[[500,"g","indrefilet eller ytrefilet av svin"],[2,"ss","maisstivelse"],[1,"stk","løk"],[1,"stk","rød paprika"],[1,"stk","gulrot"],[200,"g","ananasbiter"],[1,"dl","ananasjuice"],[3,"ss","ketchup"],[2,"ss","risedikk"],[2,"ss","sukker"],[2,"ss","soyasaus"],[3,"dl","ris"]],
+  st:["Kok risen.","Skjær kjøttet i biter og vend dem i maisstivelse.","Stek kjøttet gyllent i litt olje i en wokpanne. Ta ut.","Wok løk, paprika og gulrot i 3 minutter.","Rør sammen ananasjuice, ketchup, eddik, sukker og soyasaus. Hell i pannen sammen med ananas og kjøtt, og la det koke opp til sausen tykner."]},
+ {id:"lasagne",img:"https://images.matprat.no/s2gbtxuz66-normal/710/og.png",t:"Lasagne",p:"kjøtt",c:"italiensk",min:90,e:"🍝",
+  src:"https://www.matprat.no/oppskrifter/familien/lasagne/",sn:"Matprat",
+  ing:[[500,"g","kjøttdeig"],[1,"stk","løk"],[2,"fedd","hvitløk"],[1,"stk","gulrot"],[800,"g","hakkede tomater (2 bokser)"],[2,"ss","tomatpuré"],[2,"ts","tørket oregano"],[1,"ts","salt"],[50,"g","smør"],[50,"g","hvetemel"],[7,"dl","melk"],[12,"ark","lasagneplater"],[150,"g","revet ost"]],
+  st:["Forvarm ovnen til 200 °C.","Brun kjøttdeigen med løk, hvitløk og revet gulrot. Tilsett tomater, tomatpuré, oregano og salt, og la sausen småkoke i 15 minutter.","Lag hvit saus: smelt smøret, rør inn melet og spe med melk litt og litt. Kok i 5 minutter.","Legg lag på lag i en form: kjøttsaus, plater, hvit saus. Avslutt med hvit saus og revet ost.","Stek i ca. 40 minutter. La lasagnen hvile i 10 minutter før servering."]},
+ {id:"ossobuco",img:"https://images.matprat.no/8ufdltk7p3-normal/710/og.png",t:"Ossobuco med gremolata",p:"kjøtt",c:"italiensk",min:150,e:"🍖",
+  src:"https://www.matprat.no/oppskrifter/gjester/osso-bucco/",sn:"Matprat",
+  ing:[[1200,"g","kalveskank i skiver (ca. 4 stk)"],[2,"ss","hvetemel"],[2,"ss","olivenolje"],[1,"stk","løk"],[2,"stk","gulrot"],[2,"stk","stangselleri"],[2,"fedd","hvitløk"],[2,"dl","hvitvin"],[400,"g","hakkede tomater (1 boks)"],[3,"dl","kraft"],[1,"stk","sitron (skall)"],[0.5,"bunt","persille"],[2.5,"dl","polenta"]],
+  st:["Vend kjøttskivene i mel og brun dem i olivenolje i en jerngryte. Ta ut.","Fres hakket løk, gulrot, selleri og 1 fedd hvitløk mykt.","Spe med hvitvin, tilsett tomater og kraft, og legg kjøttet tilbake.","La gryten trekke under lokk på svak varme i ca. 2 timer, til kjøttet slipper beinet.","Lag gremolata av finhakket persille, revet sitronskall og resten av hvitløken. Strø over og server med polenta."]},
+ {id:"moussaka",img:"https://images.matprat.no/bvf52arthy-normal/710/og.png",t:"Moussaka",p:"kjøtt",c:"gresk",min:90,e:"🍆",
+  src:"https://www.matprat.no/oppskrifter/gjester/moussaka/",sn:"Matprat",
+  ing:[[2,"stk","aubergine"],[400,"g","poteter"],[500,"g","lammekjøttdeig eller kjøttdeig"],[1,"stk","løk"],[2,"fedd","hvitløk"],[400,"g","hakkede tomater (1 boks)"],[1,"dl","rødvin"],[1,"ts","kanel"],[1,"ts","tørket oregano"],[40,"g","smør"],[40,"g","hvetemel"],[5,"dl","melk"],[1,"stk","egg"],[50,"g","parmesan"]],
+  st:["Forvarm ovnen til 200 °C. Skjær aubergine og poteter i skiver, pensle med olje og stek dem myke i ovnen i ca. 20 minutter.","Brun kjøttdeigen med løk og hvitløk. Tilsett tomater, rødvin, kanel og oregano, og la det småkoke i 15 minutter.","Lag bechamel: smelt smøret, rør inn mel og spe med melk. Kok litt, ta av platen og rør inn egg og halvparten av osten.","Legg poteter, halvparten av auberginen, kjøttsausen og resten av auberginen i en form. Hell over bechamel og strø over resten av osten.","Stek i 40 minutter og la den hvile i 15 minutter før servering."]},
+ {id:"kleftiko",img:"https://images.matprat.no/8k4vzhanez-normal/710/og.png",t:"Kleftiko – langtidsstekt lam",p:"kjøtt",c:"gresk",min:210,e:"🐑",
+  src:"https://www.matprat.no/oppskrifter/gjester/kleftiko/",sn:"Matprat",
+  ing:[[1500,"g","lammelår eller lammeskulder med bein"],[1000,"g","poteter"],[2,"stk","rødløk"],[6,"fedd","hvitløk"],[2,"stk","sitron"],[1,"ss","tørket oregano"],[1,"dl","olivenolje"],[250,"g","cherrytomater"],[200,"g","fetaost"],[1,"ts","salt"]],
+  st:["Stikk hull i kjøttet og gni inn hvitløk, sitronsaft, oregano, olivenolje og salt. La det gjerne marinere i noen timer.","Forvarm ovnen til 160 °C.","Legg poteter i båter, rødløk og tomater i en stor form med kjøttet på toppen. Smuldre feta over.","Dekk formen tett med bakepapir og folie, og stek i ca. 3 timer.","Ta av folien de siste 20 minuttene og øk til 200 °C, så kjøttet får farge."],note:"Rettet heter «tyvens lam» fordi den tradisjonelt ble tilberedt forseglet, så ingen skulle kjenne lukten."},
+ {id:"kafta",img:"https://zaatarandzaytoun.com/wp-content/uploads/2020/07/kafta.jpg",t:"Kafta – krydrede kjøttspyd",p:"kjøtt",c:"libanesisk",min:30,e:"🍢",
+  src:"https://zaatarandzaytoun.com/kafta/",sn:"Zaatar and Zaytoun (engelsk)",
+  ing:[[600,"g","lammekjøttdeig eller storfekjøttdeig"],[1,"stk","løk"],[1,"bunt","persille"],[1,"ts","allehånde"],[0.5,"ts","kanel"],[1,"ts","salt"],[4,"stk","pitabrød"],[200,"g","hummus"],[2,"stk","tomat"],[1,"stk","rødløk"],[0.5,"stk","agurk"]],
+  st:["Riv løken og klem ut væsken. Finhakk persillen.","Elt kjøttdeig, løk, persille, krydder og salt godt sammen.","Form avlange pølser rundt grillspyd og stek eller grill i 8–10 minutter, til de er gjennomstekt.","Server i pitabrød med hummus, tomat, rødløk og agurk."]},
+ {id:"kibbeh",img:"https://thelemonbowl.com/wp-content/uploads/2023/04/Serving-baked-kibbeh-e1739030313799.jpg",t:"Ovnsbakt kibbeh",p:"kjøtt",c:"libanesisk",min:75,e:"🥧",
+  src:"https://thelemonbowl.com/baked-kibbeh/",sn:"The Lemon Bowl (engelsk)",
+  ing:[[3,"dl","fin bulgur"],[450,"g","lammekjøttdeig til skallet"],[250,"g","lammekjøttdeig til fyllet"],[2,"stk","løk"],[1,"ts","allehånde"],[1,"ts","kanel"],[1,"ts","malt spisskummen"],[1,"ts","salt"],[50,"g","pinjekjerner"],[0.75,"dl","olivenolje"],[3,"dl","gresk yoghurt"],[1,"stk","agurk"]],
+  st:["Bløtlegg bulgur i kaldt vann i 15 minutter og klem ut vannet.","Kjør bulgur, kjøttdeig til skallet, 1 løk, halvparten av krydderet og salt til en smidig deig.","Stek fyllet: resten av kjøttdeigen med 1 hakket løk, resten av krydderet og pinjekjernene.","Trykk halvparten av deigen i en smurt form, fordel fyllet og legg resten av deigen over. Skjær ruter i toppen og drypp med olivenolje.","Stek på 190 °C i 35–40 minutter. Server med yoghurt og agurk."]}
+];
+const PROTEINS=[["kylling","Kylling"],["kjøtt","Kjøtt"],["fisk","Fisk"],["vegetar","Vegetar"]];
+const CUISINES=[["asiatisk","Asiatisk"],["italiensk","Italiensk"],["gresk","Gresk"],["libanesisk","Libanesisk"]];
+const LBL=Object.fromEntries([...PROTEINS,...CUISINES]);
+const P_EMOJI={kylling:"🍗","kjøtt":"🥩",fisk:"🐟",vegetar:"🥦"};
+const inClaude=typeof window.claude?.use==="function";
+/* Bilder fra oppskriftssidene vises når appen ligger på egen server (GitHub). claude.ai-sider kan ikke laste bilder fra andre nettsteder. */
+const SHOW_IMG=!inClaude;
+const UNITS=["g","kg","dl","l","ss","ts","stk","fedd","bunt","ark","skiver","klype"];
+const BASE=4;
+const HEART='<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 21s-7.5-4.6-9.6-9.3C.9 8.3 3 4.5 6.7 4.5c2.1 0 3.6 1.2 4.3 2.4.2.3.6.3.8 0 .7-1.2 2.2-2.4 4.3-2.4 3.7 0 5.8 3.8 4.3 7.2C18.9 16.4 12 21 12 21z"/></svg>';
+const HEART_O='<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" d="M12 20s-7-4.3-8.9-8.6C1.7 8.3 3.6 5.5 6.7 5.5c1.9 0 3.3 1.1 4 2.3.6 1 1.9 1 2.5 0 .7-1.2 2.1-2.3 4-2.3 3.1 0 5 2.8 3.6 5.9C19 15.7 12 20 12 20z"/></svg>';
+
+/* ---------- Lagring (per enhet) ---------- */
+const store={get(k,d){try{const v=localStorage.getItem("middag."+k);return v==null?d:JSON.parse(v)}catch(e){return d}},
+             set(k,v){try{localStorage.setItem("middag."+k,JSON.stringify(v))}catch(e){}}};
+const state={
+  protein:new Set(store.get("protein",[])),
+  cuisine:new Set(store.get("cuisine",[])),
+  persons:store.get("persons",4),
+  sort:store.get("sort","match"),
+  favOnly:store.get("favOnly",false),
+  liked:new Set(store.get("liked",[])),
+  hidden:new Set(store.get("hidden",[])),
+  added:store.get("added",[]),
+  fresh:new Set(),
+  open:null, busy:null
+};
+function save(){
+  store.set("protein",[...state.protein]);store.set("cuisine",[...state.cuisine]);store.set("persons",state.persons);
+  store.set("sort",state.sort);store.set("favOnly",state.favOnly);store.set("liked",[...state.liked]);
+  store.set("hidden",[...state.hidden]);store.set("added",state.added);
+}
+const all=()=>RECIPES.concat(state.added);
+const byId=id=>all().find(r=>r.id===id);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+/* ---------- Skalering og norske enheter ---------- */
+const FR={0.25:"¼",0.5:"½",0.75:"¾"};
+function nf(x,dec=1){return (Math.round(x*10**dec)/10**dec).toLocaleString("nb-NO",{maximumFractionDigits:dec})}
+function frac(x){const q=Math.max(0.25,Math.round(x*4)/4),w=Math.floor(q),r=+(q-w).toFixed(2);return (w?w:"")+(r?FR[r]:"")}
+function fmt(a,u){
+  if(u==="kg") return fmt(a*1000,"g");
+  if(u==="l") return fmt(a*10,"dl");
+  if(u==="g"){ if(a>=1000) return nf(a/1000,a>=2000?1:2)+" kg"; a=a<20?Math.max(1,Math.round(a)):a<100?Math.round(a/5)*5:Math.round(a/10)*10; return a+" g"}
+  if(u==="dl"){ if(a<0.3) return fmt(a/0.15,"ss"); if(a>=10) return nf(a/10,1)+" l"; return nf(Math.round(a*4)/4,2)+" dl"}
+  if(u==="ss"){ if(a>6) return fmt(a*0.15,"dl"); if(a<0.75) return fmt(a*3,"ts"); return frac(a)+" ss"}
+  if(u==="ts"){ if(a>=3) return fmt(a/3,"ss"); return frac(a)+" ts"}
+  if(u==="stk"||u==="bunt") return frac(a)+" "+u;
+  if(u==="fedd"||u==="ark"||u==="skiver"||u==="klype") return Math.max(1,Math.round(a))+" "+u;
+  return nf(a)+(u?" "+u:"");
+}
+function scaled(r){
+  const f=state.persons/(r.base||BASE);
+  return r.ing.map(([m,u,n])=>({q:(typeof m==="number"&&m>0)?fmt(m*f,u):(u||""),n}));
+}
+
+/* ---------- Filtrering og sortering ---------- */
+function visible(){
+  let list=all().filter(r=>!state.hidden.has(r.id)
+    &&(!state.protein.size||state.protein.has(r.p))
+    &&(!state.cuisine.size||state.cuisine.has(r.c))
+    &&(!state.favOnly||state.liked.has(r.id)));
+  const byName=(a,b)=>a.t.localeCompare(b.t,"nb");
+  if(state.sort==="time") list.sort((a,b)=>a.min-b.min||byName(a,b));
+  else if(state.sort==="name") list.sort(byName);
+  else{
+    const ci=Object.fromEntries(CUISINES.map(([k],i)=>[k,i])),pi=Object.fromEntries(PROTEINS.map(([k],i)=>[k,i]));
+    const s=r=>(state.fresh.has(r.id)?2:0)+(state.liked.has(r.id)?1:0);
+    list.sort((a,b)=>s(b)-s(a)||ci[a.c]-ci[b.c]||pi[a.p]-pi[b.p]||a.min-b.min);
+  }
+  return list;
+}
+
+/* ---------- Rendering ---------- */
+const $=id=>document.getElementById(id);
+function chips(el,items,set){
+  el.innerHTML="";
+  const a=document.createElement("button");
+  a.className="chip";a.textContent="Alle";a.setAttribute("aria-pressed",String(!set.size));
+  a.onclick=()=>{set.clear();update()};el.appendChild(a);
+  items.forEach(([k,v])=>{
+    const b=document.createElement("button");
+    b.className="chip";b.textContent=v;b.setAttribute("aria-pressed",String(set.has(k)));
+    b.onclick=()=>{set.has(k)?set.delete(k):set.add(k);update()};el.appendChild(b);
+  });
+}
+const personsText=n=>n+(n===1?" person":" personer");
+function tags(r){
+  return `<span class="tag">${LBL[r.c]}</span><span class="tag ${r.p==="vegetar"?"veg":""}">${LBL[r.p]}</span>`
+   +(r.min?`<span class="tag">${r.min} min</span>`:"")+(state.fresh.has(r.id)?`<span class="tag new">Ny</span>`:"");
+}
+function thumb(r){
+  const em=esc((r.t||"?").trim().charAt(0).toUpperCase()),src=r.thumb||r.img;
+  return SHOW_IMG&&src?`<img src="${esc(src)}" alt="" loading="lazy" referrerpolicy="no-referrer" data-fb="${em}">`:em;
+}
+document.addEventListener("error",e=>{
+  const t=e.target;if(t.tagName!=="IMG")return;
+  if(t.dataset.fb){const p=t.parentNode;p.classList.remove("has-img");p.textContent=t.dataset.fb}
+  else if(t.classList.contains("hero-img"))t.remove();
+},true);
+function renderList(){
+  const list=visible(),el=$("list");
+  $("count").textContent=list.length+(list.length===1?" rett":" retter");
+  if(!list.length){
+    el.innerHTML=`<div class="empty">${state.favOnly?"Ingen favoritter ennå. Trykk på hjertet ved en rett for å lagre den.":"Ingen retter igjen for dette valget. Trykk «Legg til nye oppskrifter» for flere."}</div>`;
+    return;
+  }
+  el.innerHTML=list.map(r=>{
+    const fav=state.liked.has(r.id);
+    return `<article class="card ${state.fresh.has(r.id)?"new":""}">
+      <button class="open-btn" data-open="${r.id}">
+        <span class="thumb ${SHOW_IMG&&(r.thumb||r.img)?"has-img":""}" aria-hidden="true">${thumb(r)}</span>
+        <span style="min-width:0">
+          <h3>${esc(r.t)}</h3>
+          <span class="meta">${tags(r)}</span>
+          <div class="src">${esc(r.sn)}</div>
+        </span>
+      </button>
+      <div class="card-actions">
+        <button class="icon-btn heart" data-fav="${r.id}" aria-pressed="${fav}" aria-label="${fav?"Fjern fra favoritter":"Lagre som favoritt"}">${fav?HEART:HEART_O}</button>
+        <button class="icon-btn" data-hide="${r.id}" aria-label="Fjern ${esc(r.t)}">✕</button>
+      </div>
+    </article>`}).join("");
+}
+function renderHidden(){
+  const h=all().filter(r=>state.hidden.has(r.id));
+  $("hiddenBox").hidden=!h.length;
+  $("hiddenSummary").textContent=`Fjernede oppskrifter (${h.length})`;
+  $("hiddenList").innerHTML=h.map(r=>`<li><span>${esc(r.t)}</span><button class="btn ghost small" data-restore="${r.id}">Hent tilbake</button></li>`).join("");
+}
+function searchUrl(){
+  const p=[...state.protein].map(k=>LBL[k].toLowerCase()).join(" ");
+  const c=[...state.cuisine].map(k=>LBL[k].toLowerCase()).join(" ");
+  const q=`${c} ${p} middag oppskrift`.replace(/\s+/g," ").trim();
+  return "https://www.google.com/search?hl=no&q="+encodeURIComponent(q+" site:matprat.no OR site:tine.no OR site:godfisk.no OR site:meny.no OR site:trinesmatblogg.no");
+}
+function update(){
+  chips($("proteinChips"),PROTEINS,state.protein);
+  chips($("cuisineChips"),CUISINES,state.cuisine);
+  $("persons").textContent=personsText(state.persons);
+  $("minus").disabled=state.persons<=1;$("plus").disabled=state.persons>=12;
+  $("sort").value=state.sort;
+  $("favOnly").setAttribute("aria-pressed",String(state.favOnly));$("favOnly").innerHTML=(state.favOnly?HEART:HEART_O)+"Favoritter";
+  $("searchMore").href=searchUrl();
+  renderList();renderHidden();if(state.open)renderDetail();save();
+}
+
+/* ---------- Favoritter og fjerning ---------- */
+let toastTimer=null,undoFn=null;
+function toast(text,undo){
+  $("toastText").textContent=text;$("toastUndo").hidden=!undo;undoFn=undo;$("toast").hidden=false;
+  clearTimeout(toastTimer);toastTimer=setTimeout(()=>{$("toast").hidden=true;undoFn=null},5000);
+}
+$("toastUndo").onclick=()=>{if(undoFn)undoFn();$("toast").hidden=true;undoFn=null};
+function toggleFav(id){state.liked.has(id)?state.liked.delete(id):state.liked.add(id);update()}
+function hide(id){
+  const r=byId(id);if(!r)return;
+  state.hidden.add(id);state.liked.delete(id);
+  if(state.open===id)closeRecipe();
+  update();
+  toast(`«${r.t}» er fjernet`,()=>{state.hidden.delete(id);update()});
+}
+function restore(id){state.hidden.delete(id);update()}
+document.addEventListener("click",e=>{
+  const t=e.target.closest("[data-open],[data-fav],[data-hide],[data-restore]");if(!t)return;
+  if(t.dataset.open)openRecipe(t.dataset.open);
+  else if(t.dataset.fav)toggleFav(t.dataset.fav);
+  else if(t.dataset.hide)hide(t.dataset.hide);
+  else if(t.dataset.restore)restore(t.dataset.restore);
+});
+
+/* ---------- Detaljvisning ---------- */
+function renderDetail(){
+  const r=byId(state.open);if(!r)return;
+  const fav=state.liked.has(r.id);
+  $("dTitle").textContent=r.t;
+  $("dMeta").innerHTML=tags(r);
+  $("dPersons").textContent=personsText(state.persons);
+  $("dMinus").disabled=state.persons<=1;$("dPlus").disabled=state.persons>=12;
+  $("dFav").setAttribute("aria-pressed",String(fav));
+  $("dFav").innerHTML=(fav?HEART:HEART_O)+(fav?" Favoritt":" Lagre");
+  $("dImg").innerHTML=SHOW_IMG&&r.img?`<img class="hero-img" src="${esc(r.img)}" alt="Bilde av ${esc(r.t)}" referrerpolicy="no-referrer">`:"";
+  $("dIng").innerHTML=scaled(r).map(i=>`<li><span class="qty">${esc(i.q)}</span><span>${esc(i.n)}</span></li>`).join("");
+  $("dSteps").innerHTML=r.st.map(s=>`<li>${esc(s)}</li>`).join("");
+  $("dNote").innerHTML=r.note?`<div class="note"><b>Tips</b>${esc(r.note)}</div>`:"";
+  if(r.kind==="ai") $("dSrc").innerHTML=`Denne oppskriften er laget av Claude og ikke hentet fra en nettside. <a href="https://www.google.com/search?hl=no&q=${encodeURIComponent(r.t+" oppskrift")}" target="_blank" rel="noopener">Sammenlign med oppskrifter på nettet</a>`;
+  else if(r.kind==="mealdb") $("dSrc").innerHTML=`Hentet fra <a href="${esc(r.src)}" target="_blank" rel="noopener">${esc(r.sn)}</a>. Målene er regnet om til norske enheter og skalert fra antatt 4 porsjoner. Fremgangsmåten er på engelsk.`;
+  else $("dSrc").innerHTML=`Tilpasset fra <a href="${esc(r.src)}" target="_blank" rel="noopener">${esc(r.sn)}</a>. Mengdene er omregnet til norske mål og skalert til ${personsText(state.persons)}.`;
+}
+let lastFocus=null;
+function openRecipe(id){
+  lastFocus=document.activeElement;state.open=id;renderDetail();
+  $("sheetRoot").classList.add("open");document.body.style.overflow="hidden";
+  document.querySelector(".sheet").scrollTop=0;$("close").focus();
+}
+function closeRecipe(){
+  state.open=null;$("sheetRoot").classList.remove("open");document.body.style.overflow="";
+  if(lastFocus&&document.contains(lastFocus))lastFocus.focus();
+}
+$("dFav").onclick=()=>toggleFav(state.open);
+$("dHide").onclick=()=>hide(state.open);
+
+/* ---------- Hente nye oppskrifter ----------
+   På claude.ai: Claude lager oppskrifter på norsk med norske mål.
+   Ellers (f.eks. GitHub Pages): TheMealDB, med mål regnet om til norske enheter. */
+let sampleFn=null;
+function setStatus(html,{err=false,busy=false,stop=false}={}){
+  const s=$("status");
+  if(!html){s.hidden=true;return}
+  s.hidden=false;s.className="status"+(err?" err":"");
+  s.innerHTML=`<span style="display:flex;gap:10px;align-items:center">${busy?'<span class="spinner"></span>':""}<span>${html}</span></span>`+(stop?'<button class="btn ghost small" id="stopBtn">Stopp</button>':"");
+  if(stop)$("stopBtn").onclick=()=>state.busy?.abort();
+}
+function modeNote(){
+  $("modeNote").textContent=sampleFn
+    ?"Nye oppskrifter lages av Claude på norsk, tilpasset valgene og favorittene dine."
+    :"Nye oppskrifter hentes fra TheMealDB (engelsk oppskriftsbase). Målene regnes om til norske enheter.";
+}
+function targets(){
+  const ps=state.protein.size?[...state.protein]:PROTEINS.map(p=>p[0]);
+  const cs=state.cuisine.size?[...state.cuisine]:CUISINES.map(c=>c[0]);
+  return {ps,cs};
+}
+function addRecipes(list){
+  const fresh=list.filter(r=>!all().some(x=>x.id===r.id||x.t.toLowerCase()===r.t.toLowerCase()));
+  state.added=state.added.concat(fresh);
+  state.fresh=new Set(fresh.map(r=>r.id));
+  if(state.sort!=="match")state.sort="match";
+  state.favOnly=false;
+  update();
+  return fresh.length;
+}
+$("addNew").onclick=async()=>{
+  if(state.busy)return;
+  const ctl=new AbortController();state.busy=ctl;$("addNew").disabled=true;
+  try{
+    const n=sampleFn?await fromClaude(ctl.signal):await fromMealDB(ctl.signal);
+    if(n) setStatus(n===1?"La til 1 ny oppskrift. Den ligger øverst i listen.":`La til ${n} nye oppskrifter. De ligger øverst i listen.`);
+    else setStatus("Fant ingen nye oppskrifter for dette valget. Prøv et annet kjøkken eller en annen råvare.",{err:true});
+    if(n) document.querySelector(".results-head").scrollIntoView({behavior:"smooth",block:"start"});
+  }catch(e){
+    if(e?.code==="cancelled"||e?.name==="AbortError") setStatus("");
+    else setStatus(errText(e),{err:true});
+  }finally{state.busy=null;$("addNew").disabled=false}
+};
+function errText(e){
+  switch(e?.code){
+    case "not_granted": case "sampling_disabled": case "capability_disabled": case "not_declared":
+      return "Claude fikk ikke lov til å lage oppskrifter i denne visningen. Last siden på nytt og trykk «Tillat» for å prøve igjen.";
+    case "rate_limited": return "For mange forespørsler akkurat nå. Vent litt og prøv igjen.";
+    case "invalid_json": case "empty_completion": return "Svaret kom i feil format. Prøv igjen.";
+    case "session_expired": return "Du må logge inn på nytt.";
+    case "net": return "Fikk ikke kontakt med oppskriftsbasen. Sjekk nettforbindelsen og prøv igjen.";
+    default: return "Noe gikk galt under hentingen. Prøv igjen.";
+  }
+}
+
+/* --- Claude --- */
+async function fromClaude(signal){
+  setStatus("Claude lager nye oppskrifter … det tar vanligvis 20–60 sekunder.",{busy:true,stop:true});
+  const {ps,cs}=targets();
+  const existing=all().map(r=>r.t);
+  const likes=all().filter(r=>state.liked.has(r.id)).map(r=>r.t);
+  const dislikes=all().filter(r=>state.hidden.has(r.id)).map(r=>r.t);
+  const prompt=`Du lager middagsoppskrifter til en norsk middagsapp. Lag 4 nye, ekte og velkjente middagsretter.
+
+Råvare (p) må være én av: ${ps.join(", ")}.
+Kjøkken (c) må være én av: ${cs.join(", ")}.
+Spre rettene over kombinasjonene hvis det er flere. "kjøtt" betyr storfe, svin eller lam (ikke kylling). "vegetar" betyr uten kjøtt og fisk.
+Ingredienser skal være lette å få tak i i norske dagligvarebutikker.
+Mengdene er for 4 personer. Bruk KUN disse enhetene: ${UNITS.join(", ")}. Ingen cups, oz, lb eller ml.
+Ingredienser uten fast mengde (f.eks. salt og pepper) får mengde null og enhet "".
+Skriv alt på norsk bokmål. 4–6 korte steg per rett, med temperatur i °C.
+
+Ikke foreslå disse, de finnes allerede: ${existing.join("; ")}.
+${likes.length?`Brukeren liker: ${likes.join("; ")}.`:""}
+${dislikes.length?`Brukeren liker IKKE: ${dislikes.join("; ")}. Unngå lignende retter.`:""}
+
+Svar med kun en JSON-array, uten annen tekst. Hvert element:
+{"t":"Navn på retten","p":"kylling","c":"italiensk","min":35,"e":"🍝","ing":[[600,"g","kyllingfilet"],[null,"","salt og pepper"]],"st":["Steg 1","Steg 2"],"note":"valgfritt kort tips eller tom streng"}`;
+  const data=await sampleFn.json(prompt,{signal,cache:false});
+  if(!Array.isArray(data))throw {code:"invalid_json"};
+  const now=Date.now();
+  const list=data.map((x,i)=>normalizeAI(x,now+i)).filter(Boolean);
+  return addRecipes(list);
+}
+function normalizeAI(x,stamp){
+  if(!x||typeof x.t!=="string"||!Array.isArray(x.ing)||!Array.isArray(x.st))return null;
+  const p=PROTEINS.some(([k])=>k===x.p)?x.p:null,c=CUISINES.some(([k])=>k===x.c)?x.c:null;
+  if(!p||!c)return null;
+  const ing=x.ing.filter(i=>Array.isArray(i)&&i[2]).map(([m,u,n])=>{
+    const num=Number(m);u=String(u||"").toLowerCase().trim();
+    if(!(num>0)||!UNITS.includes(u))return [null,"",String(n)];
+    return [num,u,String(n)];
+  });
+  if(!ing.length)return null;
+  return {id:"ai-"+stamp,t:x.t.slice(0,80),p,c,min:Math.max(5,Math.min(240,Number(x.min)||30)),
+    e:typeof x.e==="string"?x.e.slice(0,4):P_EMOJI[p],ing,st:x.st.map(String).slice(0,10),
+    note:typeof x.note==="string"&&x.note.trim()?x.note.slice(0,200):"",sn:"Laget av Claude",kind:"ai"};
+}
+
+/* --- TheMealDB --- */
+const API="https://www.themealdb.com/api/json/v1/1/";
+const AREAS={asiatisk:["Chinese","Japanese","Thai","Vietnamese","Malaysian","Filipino","Indonesian","South Korean"],
+  italiensk:["Italian"],gresk:["Greek","Cypriot"],libanesisk:["Lebanese","Syrian","Palestinian","Jordanian"]};
+const CATS={kylling:["Chicken"],"kjøtt":["Beef","Lamb","Pork","Goat"],fisk:["Seafood"],vegetar:["Vegetarian","Vegan"]};
+const listCache={};
+async function getJSON(url,signal){
+  let res;try{res=await fetch(url,{signal})}catch(e){if(e.name==="AbortError")throw e;throw {code:"net"}}
+  if(!res.ok)throw {code:"net"};return res.json();
+}
+async function mealIds(kind,val,signal){
+  const key=kind+val;if(listCache[key])return listCache[key];
+  const d=await getJSON(API+"filter.php?"+kind+"="+encodeURIComponent(val),signal);
+  return listCache[key]=(d.meals||[]).map(m=>m.idMeal);
+}
+async function fromMealDB(signal){
+  setStatus("Henter oppskrifter …",{busy:true,stop:true});
+  const {ps,cs}=targets();
+  const areaIds={},catIds={};
+  await Promise.all([
+    ...cs.map(async c=>{areaIds[c]=new Set((await Promise.all(AREAS[c].map(a=>mealIds("a",a,signal)))).flat())}),
+    ...ps.map(async p=>{catIds[p]=new Set((await Promise.all(CATS[p].map(k=>mealIds("c",k,signal)))).flat())})
+  ]);
+  const known=new Set(all().map(r=>r.id));
+  const pool=[];
+  for(const c of cs)for(const p of ps)for(const id of areaIds[c])
+    if(catIds[p].has(id)&&!known.has("mdb-"+id))pool.push({id,c,p});
+  for(let i=pool.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]]}
+  const pick=pool.slice(0,4);
+  if(!pick.length)return 0;
+  const meals=await Promise.all(pick.map(async x=>{
+    const d=await getJSON(API+"lookup.php?i="+x.id,signal);const m=d.meals&&d.meals[0];
+    return m?fromMeal(m,x.c,x.p):null;
+  }));
+  return addRecipes(meals.filter(Boolean));
+}
+const UNICODE_FR={"½":".5","¼":".25","¾":".75","⅓":".333","⅔":".667","⅛":".125"};
+function parseNum(s){
+  s=s.trim();
+  let m=s.match(/^(\d+)\s+(\d+)\/(\d+)/);if(m)return {n:+m[1]+m[2]/m[3],rest:s.slice(m[0].length)};
+  m=s.match(/^(\d+)\/(\d+)/);if(m)return {n:m[1]/m[2],rest:s.slice(m[0].length)};
+  m=s.match(/^(\d*[.,]?\d+)(\s*-\s*\d*[.,]?\d+)?/);if(m)return {n:parseFloat(m[1].replace(",",".")),rest:s.slice(m[0].length)};
+  return null;
+}
+const U_MAP=[
+  [/^(cups?|c)\b\.?/,"dl",2.37],[/^(tablespoons?|tbsp|tbs|tbls?)\b\.?/,"ss",1],[/^(teaspoons?|tsp)\b\.?/,"ts",1],
+  [/^(pounds?|lbs?)\b\.?/,"g",454],[/^(ounces?|oz)\b\.?/,"g",28.35],[/^(kilograms?|kg)\b/,"g",1000],
+  [/^(grams?|gr|g)\b/,"g",1],[/^(millilitres?|milliliters?|ml)\b/,"dl",0.01],[/^(litres?|liters?|l)\b/,"dl",10],
+  [/^(cloves?)\b/,"fedd",1],[/^(pinch(es)?|dash(es)?)\b/,"klype",1],[/^(slices?)\b/,"skiver",1],[/^(bunch(es)?)\b/,"bunt",1],
+  [/^(handfuls?)\b/,"stk",1]
+];
+function convertMeasure(raw){
+  let s=String(raw||"").toLowerCase().trim();
+  s=s.replace(/(\d)\s*([½¼¾⅓⅔⅛])/g,(m,d,f)=>d+UNICODE_FR[f]).replace(/[½¼¾⅓⅔⅛]/g,f=>"0"+UNICODE_FR[f]);
+  const num=parseNum(s);
+  if(!num){const w={"to taste":"etter smak","pinch":"1 klype","dash":"1 klype","to serve":"til servering","garnish":"til pynt","as required":"etter behov"}[s]; return {m:null,u:w||(raw?String(raw).trim():""),extra:""}}
+  let rest=num.rest.trim();
+  const oz=rest.match(/^\(\s*(\d+[.,]?\d*)\s*(oz|ounces?)\.?\s*\)/);
+  if(oz)return {m:num.n*parseFloat(oz[1])*28.35,u:"g",extra:""};
+  for(const [re,u,f] of U_MAP){const m=rest.match(re);if(m)return {m:num.n*f,u,extra:rest.slice(m[0].length).trim()}}
+  return {m:num.n,u:"stk",extra:rest};
+}
+const NO={"chicken":"kylling","chicken breast":"kyllingbryst","chicken breasts":"kyllingbryst","chicken thighs":"kyllinglår","chicken legs":"kyllinglår",
+ "onion":"løk","onions":"løk","red onion":"rødløk","garlic":"hvitløk","garlic clove":"hvitløksfedd","ginger":"ingefær","salt":"salt","pepper":"pepper",
+ "black pepper":"sort pepper","olive oil":"olivenolje","vegetable oil":"nøytral olje","oil":"olje","butter":"smør","water":"vann","sugar":"sukker",
+ "brown sugar":"brunt sukker","soy sauce":"soyasaus","fish sauce":"fiskesaus","rice":"ris","basmati rice":"basmatiris","lemon":"sitron","lemon juice":"sitronsaft",
+ "lime":"lime","tomato":"tomat","tomatoes":"tomater","chopped tomatoes":"hakkede tomater","tomato puree":"tomatpuré","eggs":"egg","egg":"egg",
+ "flour":"hvetemel","plain flour":"hvetemel","milk":"melk","double cream":"kremfløte","cream":"fløte","parmesan":"parmesan","feta":"fetaost",
+ "spinach":"spinat","carrots":"gulrøtter","carrot":"gulrot","potatoes":"poteter","coriander":"koriander","parsley":"persille","basil":"basilikum",
+ "mint":"mynte","dill":"dill","oregano":"oregano","cumin":"spisskummen","paprika":"paprikapulver","cinnamon":"kanel","chilli":"chili","chili powder":"chilipulver",
+ "red pepper":"rød paprika","green pepper":"grønn paprika","aubergine":"aubergine","eggplant":"aubergine","courgette":"squash","zucchini":"squash",
+ "mushrooms":"sopp","chickpeas":"kikerter","lentils":"linser","tahini":"tahini","greek yogurt":"gresk yoghurt","yogurt":"yoghurt","honey":"honning",
+ "prawns":"reker","shrimp":"reker","salmon":"laks","cod":"torsk","white fish":"hvit fisk","tofu":"tofu","coconut milk":"kokosmelk","spring onions":"vårløk",
+ "sesame oil":"sesamolje","sesame seeds":"sesamfrø","cornstarch":"maisstivelse","cornflour":"maisstivelse","noodles":"nudler","pasta":"pasta",
+ "spaghetti":"spaghetti","white wine":"hvitvin","red wine":"rødvin","chicken stock":"kyllingkraft","vegetable stock":"grønnsakskraft","bay leaf":"laurbærblad"};
+const F2C=s=>s.replace(/(\d{3})\s*°?\s*F\b/g,(m,f)=>Math.round((f-32)*5/9/5)*5+" °C");
+function fromMeal(m,c,p){
+  const ing=[];
+  for(let i=1;i<=20;i++){
+    const name=(m["strIngredient"+i]||"").trim();if(!name)continue;
+    const cv=convertMeasure(m["strMeasure"+i]);
+    const n=(NO[name.toLowerCase()]||name)+(cv.extra?` (${cv.extra})`:"");
+    ing.push(cv.m?[Math.round(cv.m*100)/100,cv.u,n]:[null,cv.u,n]);
+  }
+  const st=F2C(m.strInstructions||"").split(/\r?\n+/).map(s=>s.replace(/^\s*(step\s*)?\d+[.):]?\s*/i,"").trim()).filter(s=>s.length>3);
+  return {id:"mdb-"+m.idMeal,t:m.strMeal,p,c,min:0,e:P_EMOJI[p],img:m.strMealThumb||"",thumb:m.strMealThumb?m.strMealThumb+"/preview":"",ing,st:st.length?st:["Se originaloppskriften."],
+    sn:"TheMealDB (engelsk)",src:m.strSource||("https://www.themealdb.com/meal/"+m.idMeal),kind:"mealdb",base:4};
+}
+
+/* ---------- Hendelser ---------- */
+const bump=d=>{state.persons=Math.min(12,Math.max(1,state.persons+d));update()};
+$("minus").onclick=()=>bump(-1);$("plus").onclick=()=>bump(1);
+$("dMinus").onclick=()=>bump(-1);$("dPlus").onclick=()=>bump(1);
+$("sort").onchange=e=>{state.sort=e.target.value;update()};
+$("favOnly").onclick=()=>{state.favOnly=!state.favOnly;update()};
+$("close").onclick=closeRecipe;$("sheetBg").onclick=closeRecipe;
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&state.open)closeRecipe()});
+$("surprise").onclick=()=>{const l=visible();const pool=l.length?l:all().filter(r=>!state.hidden.has(r.id));if(pool.length)openRecipe(pool[Math.floor(Math.random()*pool.length)].id)};
+
+update();modeNote();
+if(inClaude){
+  window.claude.use("sample").then(fn=>{sampleFn=fn||null;modeNote()}).catch(()=>{});
+}
+
+</script>
+</body>
+</html>
